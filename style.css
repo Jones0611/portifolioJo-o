@@ -1,0 +1,302 @@
+/* Reset CSS */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        /* Efeito Matrix */
+        body {
+            background-color: black;
+            color: #00ff00;
+            font-family: 'Courier New', monospace;
+            overflow-x: hidden;
+            position: relative;
+        }
+        
+        /* Efeito de glitch no texto */
+        @keyframes glitch {
+            0% { text-shadow: 0.05em 0 0 #00ff00, -0.05em -0.025em 0 #ff00ff; }
+            14% { text-shadow: 0.05em 0 0 #00ff00, -0.05em -0.025em 0 #ff00ff; }
+            15% { text-shadow: -0.05em -0.025em 0 #00ff00, 0.025em 0.025em 0 #ff00ff; }
+            49% { text-shadow: -0.05em -0.025em 0 #00ff00, 0.025em 0.025em 0 #ff00ff; }
+            50% { text-shadow: 0.025em 0.05em 0 #00ff00, 0.05em 0 0 #ff00ff; }
+            99% { text-shadow: 0.025em 0.05em 0 #00ff00, 0.05em 0 0 #ff00ff; }
+            100% { text-shadow: -0.025em 0 0 #00ff00, -0.025em -0.025em 0 #ff00ff; }
+        }
+        
+        /* Cursor piscante */
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0; }
+        }
+        
+        /* Layout principal */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            position: relative;
+            z-index: 2;
+            background-color: rgba(0, 0, 0, 0.7);
+            min-height: 100vh;
+            border-left: 1px solid #00ff00;
+            border-right: 1px solid #00ff00;
+        }
+        
+        /* Header */
+        header {
+            padding: 40px 0;
+            text-align: center;
+            border-bottom: 1px dashed #00ff00;
+            margin-bottom: 30px;
+            animation: glitch 5s infinite alternate;
+        }
+        
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+            color: #00ff00;
+        }
+        
+        .tagline {
+            color: #00aa00;
+            font-style: italic;
+        }
+        
+        /* Navegação */
+        nav {
+            margin: 30px 0;
+        }
+        
+        .nav-list {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        
+        .nav-link {
+            color: #00ff00;
+            padding: 8px 20px;
+            text-decoration: none;
+            border: 1px solid #00ff00;
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .nav-link:hover {
+            background-color: rgba(0, 255, 0, 0.3);
+            box-shadow: 0 0 15px rgba(0, 255, 0, 0.5);
+            transform: translateY(-2px);
+        }
+        
+        .nav-link::before {
+            content: ">";
+            position: absolute;
+            left: -15px;
+            transition: all 0.3s;
+        }
+        
+        .nav-link:hover::before {
+            left: 5px;
+        }
+        
+        /* Seções */
+        section {
+            margin-bottom: 50px;
+            padding: 20px;
+            border: 1px solid #00aa00;
+            position: relative;
+        }
+        
+        section::before {
+            content: "[" attr(id) "]";
+            position: absolute;
+            top: -10px;
+            left: 20px;
+            background-color: black;
+            padding: 0 10px;
+            color: #00ff00;
+            font-size: 0.9rem;
+        }
+        
+        h2 {
+            margin-bottom: 20px;
+            color: #00ff00;
+            font-size: 1.8rem;
+            animation: glitch 5s infinite alternate;
+        }
+        
+        /* Projetos */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        
+        .project-card {
+            border: 1px solid #00aa00;
+            padding: 20px;
+            transition: all 0.3s;
+            background-color: rgba(0, 20, 0, 0.2);
+        }
+        
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0, 255, 0, 0.3);
+            border-color: #00ff00;
+        }
+        
+        .project-card h3 {
+            color: #00ff00;
+            margin-bottom: 10px;
+            font-size: 1.3rem;
+        }
+        
+        .project-card p {
+            color: #00aa00;
+            margin-bottom: 15px;
+        }
+        
+        .tech-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+        
+        .tech-tag {
+            background-color: rgba(0, 255, 0, 0.1);
+            color: #00ff00;
+            padding: 3px 10px;
+            font-size: 0.8rem;
+            border: 1px solid #00aa00;
+            border-radius: 3px;
+        }
+        
+        .project-links a {
+            color: #00ff00;
+            text-decoration: none;
+            margin-right: 15px;
+            font-size: 0.9rem;
+            border-bottom: 1px dashed #00aa00;
+            padding-bottom: 2px;
+        }
+        
+        .project-links a:hover {
+            color: #ffffff;
+            border-bottom-color: #00ff00;
+        }
+        
+        /* Rodapé */
+        footer {
+            text-align: center;
+            padding: 20px;
+            border-top: 1px dashed #00ff00;
+            margin-top: 40px;
+            color: #00aa00;
+            font-size: 0.9rem;
+        }
+        
+        /* Efeito Matrix - Modificado para katakana mais visível */
+        .matrix-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            opacity: 0.3;
+            pointer-events: none;
+        }
+        
+        /* Seção de currículo */
+        .resume-section {
+            text-align: center;
+            padding: 30px 20px;
+            margin: 40px 0;
+            border: 1px dashed #00ff00;
+            position: relative;
+            background-color: rgba(0, 20, 0, 0.1);
+        }
+
+        .resume-section h2 {
+            margin-bottom: 15px;
+            animation: none;
+        }
+
+        .download-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .download-btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background-color: rgba(0, 255, 0, 0.1);
+            color: #00ff00;
+            border: 1px solid #00ff00;
+            text-decoration: none;
+            font-size: 1.1rem;
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+            width: fit-content;
+        }
+
+        .download-btn:hover {
+            background-color: rgba(0, 255, 0, 0.3);
+            box-shadow: 0 0 15px rgba(0, 255, 0, 0.5);
+            transform: translateY(-2px);
+        }
+
+        .download-btn::before {
+            content: ">";
+            position: absolute;
+            left: -15px;
+            transition: all 0.3s;
+        }
+
+        .download-btn:hover::before {
+            left: 10px;
+        }
+
+        .file-info {
+            color: #00aa00;
+            font-size: 0.9rem;
+            margin-top: 10px;
+        }
+
+        /* Responsivo */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .nav-list {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.8rem;
+            }
+            .nav-link {
+                padding: 5px 8px;
+                font-size: 0.9rem;
+            }
+            .project-card {
+                padding: 15px;
+            }
+        }
